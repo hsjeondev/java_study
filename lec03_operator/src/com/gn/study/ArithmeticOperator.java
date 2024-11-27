@@ -24,6 +24,7 @@ public class ArithmeticOperator {
 		// b -> 6
 		b *= 5;
 		System.out.println(b);
+		System.out.println();
 		
 		int c = 10;
 		c /= 3;
@@ -31,6 +32,16 @@ public class ArithmeticOperator {
 		int d = 10;
 		d %= 3;
 		
+		// 3. 증감 연산자
+		int pre = 5;
+		System.out.println(pre);
+		System.out.println(++pre);
+		System.out.println();
+		
+		int post = 5;
+		System.out.println(post);
+		System.out.println(post++);
+		System.out.println(post);
 	}
 
 }

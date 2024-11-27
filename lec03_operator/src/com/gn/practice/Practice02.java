@@ -26,10 +26,14 @@ public class Practice02 {
 		result /= 3;
 		System.out.println("을 3으로 나눈 후 몫 : " + result);
 		System.out.print(result);
-		result %= 6;
+		result %= 3;
 		System.out.println("을 6으로 나눈 후 나머지 : " + result);
 
 		scanner.close();
+		
+		// 홀수, 짝수
+		// 1,3,5... -> 2로 나눴을 때 나머지 1
+		// 2,4,6... -> 2로 나눴을 때 나머지 0
 	}
 
 }
