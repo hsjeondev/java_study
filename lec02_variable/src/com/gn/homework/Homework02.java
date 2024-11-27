@@ -21,7 +21,7 @@ public class Homework02 {
 		circum = (row + col) * 2;
 		System.out.println("둘레 : " + circum);
 		
-
+		scanner.close();
 	}
 
 }

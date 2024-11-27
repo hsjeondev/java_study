@@ -13,6 +13,7 @@ public class Homework04 {
 		char ch = str.charAt(0);
 		System.out.println(ch + "의 유니코드 : " + (int)ch);
 
+		scanner.close();
 	}
 
 }

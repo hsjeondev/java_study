@@ -17,6 +17,8 @@ public class Homework06 {
 		square = charConversionInt * charConversionInt;
 		
 		System.out.println("입력한 숫자의 제곱은 " + square + "입니다.");
+	
+		scanner.close();
 	}
 
 }

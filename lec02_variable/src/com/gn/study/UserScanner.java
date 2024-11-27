@@ -19,6 +19,7 @@ public class UserScanner {
 		
 		System.out.println("이름 : " + name);
 		
+		scanner.close();
 	}
 
 }
