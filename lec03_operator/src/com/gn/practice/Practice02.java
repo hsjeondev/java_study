@@ -10,24 +10,7 @@ public class Practice02 {
 		
 		System.out.print("숫자를 입력해주세요 : ");
 		int result = scanner.nextInt();
-		int originalResult = result;
 		System.out.println();
-		
-//		System.out.println("입력한 숫자 " + result + "을(를) 복합 대입 연산 한 결과:");
-//		result += 3;
-//		System.out.println(originalResult + " + 3 = " + result);
-//		originalResult = result;
-//		result -= 10;
-//		System.out.println(originalResult + " - 10 = " + result);
-//		originalResult = result;
-//		result *= 2;
-//		System.out.println(originalResult + " * 2 = " + result);
-//		originalResult = result;
-//		result /= 3;
-//		System.out.println(originalResult + "을 3으로 나눈 후 몫 : " + result);
-//		originalResult = result;
-//		result %= 6;
-//		System.out.println(originalResult + "을 6으로 나눈 후 나머지 : " + result);
 		
 		System.out.println("입력한 숫자 " + result + "을(를) 복합 대입 연산 한 결과:");
 		System.out.print(result);
