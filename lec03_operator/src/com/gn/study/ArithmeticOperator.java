@@ -42,6 +42,7 @@ public class ArithmeticOperator {
 		System.out.println(post);
 		System.out.println(post++);
 		System.out.println(post);
+
 	}
 
 }
