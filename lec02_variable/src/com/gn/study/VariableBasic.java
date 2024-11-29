@@ -4,7 +4,7 @@ public class VariableBasic {
 	// ctrl + space -> "main"
 	public static void main(String[] args) {
 		// 1. 변수 선언
-		int number;
+		int number = 0;
 		// 2. 변수 초기화
 		int age;
 		age = 100;
@@ -16,6 +16,9 @@ public class VariableBasic {
 		System.out.println("1 : " + score);
 		score = 95;
 		System.out.println("2 : " + score);
+
+		System.out.println();
+
 		// 5. 문자열 변수의 초기화
 		String str1 = new String("감사");
 		String str2 = "합니다.";
@@ -77,6 +80,7 @@ public class VariableBasic {
 		final double PI = 3.14;
 		final int MAX_SIZE = 100;
 		
+
 	}
 
 }
