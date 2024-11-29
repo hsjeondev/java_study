@@ -43,7 +43,7 @@ public class Run {
 					practice.practice06();
 					break;
 				default:
-					System.out.println("잘못된 선택입니다. 다시 선택하세요."); // 메시지 추가
+					System.out.println("잘못된 선택입니다. 다시 선택하세요.");
                     break;
 			}
 			
