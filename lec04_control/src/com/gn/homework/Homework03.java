@@ -7,10 +7,10 @@ public class Homework03 {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		int firstNumber;
-		int secondNumber;
-		int thirdNumber;
-		int min;
+		int firstNumber = 0;
+		int secondNumber = 0;
+		int thirdNumber = 0;
+		int min = 0;
 		
 		System.out.println("=== 세개의 정수 비교하기 ===");
 		System.out.print("첫 번째 정수 : ");

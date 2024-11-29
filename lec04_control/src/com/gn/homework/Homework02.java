@@ -7,8 +7,8 @@ public class Homework02 {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		int month;
-		int temperature;
+		int month = 0;
+		int temperature = 0;
 		
 		System.out.println("=== 일기예보 ===");
 		System.out.print("월 : ");
