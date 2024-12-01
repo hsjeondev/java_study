@@ -21,25 +21,30 @@ public class Run {
 		do {
 			System.out.print("선택: ");
 			select = scanner.nextInt();
-			System.out.println();
 			
 			switch(select) {
 				case 1:
+					System.out.println();
 					practice.practice01();
 					break;
 				case 2:
+					System.out.println();
 					practice.practice02();
 					break;
 				case 3:
+					System.out.println();
 					practice.practice03();
 					break;
 				case 4:
+					System.out.println();
 					practice.practice04();
 					break;
 				case 5:
+					System.out.println();
 					practice.practice05();
 					break;
 				case 6:
+					System.out.println();
 					practice.practice06();
 					break;
 				default:
