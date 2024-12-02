@@ -37,10 +37,10 @@ public class Practice {
         scanner.close();
     }
 
-    public void practice03() {
+    public void practice03() { // 탈출합시다.
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("=== 탈출합시다 ===");
+        System.out.println("=== 탈출합시다. ===");
         
         while(true) {
         
@@ -58,7 +58,7 @@ public class Practice {
         scanner.close();
     }
 
-    public void practice06() {
+    public void practice06() { // 트리 만들기
     	
     	Scanner scanner = new Scanner(System.in);
     	
@@ -83,7 +83,7 @@ public class Practice {
         scanner.close();
     }
 
-    public void practice07() {
+    public void practice07() { //박수박수박
     
     	Scanner scanner = new Scanner(System.in);
     	System.out.println("=== 박수박수박 === ");
