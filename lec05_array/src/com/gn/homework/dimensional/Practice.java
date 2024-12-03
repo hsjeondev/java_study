@@ -175,12 +175,34 @@ public class Practice {
 		String[] strArr = new String[size];
 		for(int i = 0; i < strArr.length; i++) {
 			System.out.printf("%d번째 문자열 : ", i+1);
-			strArr[i] = scanner.nextLine();;
+			strArr[i] = scanner.nextLine();
 		}
 		
-		for(String s : strArr) {
-			System.out.println(s);
-		}
+		do {
+			
+			System.out.print("더 값을 입력하시겠습니까?(y/n) : ");
+			String answer = scanner.next();
+			
+			if(answer.charAt(0) == 'y' && answer.charAt(0) == 'Y') {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int moreSize = scanner.nextInt();
+				String[] moreArr = new String[size + moreSize];
+				
+				for(int i = 0; i < moreArr.length; i++) {
+					if(i <= size) {
+						moreArr[i] = strArr[i];
+						continue;
+					}
+					System.out.printf("%d번째 문자열 : ", i+1);
+				}
+				
+			}
+			
+			
+			
+		} while(size < 0);
+		
+
 //		do {
 //			
 //		} while(true);
