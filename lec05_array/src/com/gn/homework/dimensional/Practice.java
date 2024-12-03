@@ -90,6 +90,8 @@ public class Practice {
 	public void practice04() { // 로또 번호 자동 생성기
 	    int[] lotto = new int[6];
 
+	    System.out.println("=== 로또 번호 자동 생성기 ===");
+	    
 	    for(int i = 0; i < lotto.length; i++) {
 	    	int randomNumber;
 	    	boolean isOverlap = false;
@@ -110,8 +112,18 @@ public class Practice {
 	    	lotto[i] = randomNumber;
 	    }
 
-	    for (int num : lotto) {
-	        System.out.print(num + " ");
+	    for(int i = 0; i < lotto.length; i++) {
+	    	for(int j = i+1; j < lotto.length; j++) {
+	    		if(lotto[i] > lotto[j]) {
+	    			int temp = lotto[i];
+		    		lotto[i] = lotto[j];
+		    		lotto[j] = temp;
+	    		}
+	    	}
+	    }
+	    
+	    for(int number : lotto) {
+	    	System.out.print(number + " ");
 	    }
 	}
 
@@ -165,47 +177,118 @@ public class Practice {
         scanner.close();
 	}
 	
-	public void practice06() { // 배열 늘리기 - 미완
+	public void practice06() { // 배열 늘리기
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== 배열 늘리기 ===");
+        
+        System.out.print("배열 크기를 입력하세요 : ");
+        int size = scanner.nextInt();
+        scanner.nextLine();
+        String[] strArr = new String[size];
+        char answer;
+
+        for (int i = 0; i < strArr.length; i++) {
+            System.out.printf("%d번째 문자열 : ", i + 1);
+            strArr[i] = scanner.nextLine();
+        }
+
+        while (true) {
+            System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+            answer = scanner.next().charAt(0);
+            scanner.nextLine();
+
+            if (answer == 'N' || answer == 'n') {
+                break;
+            }
+
+            System.out.print("더 입력하고 싶은 개수 : ");
+            int moreSize = scanner.nextInt();
+            scanner.nextLine();
+
+            String[] moreArr = new String[strArr.length + moreSize];
+            for (int i = 0; i < strArr.length; i++) {
+                moreArr[i] = strArr[i];
+            }
+
+            for (int i = strArr.length; i < moreArr.length; i++) {
+                System.out.printf("%d번째 문자열 : ", i + 1);
+                moreArr[i] = scanner.nextLine();
+            }
+
+            strArr = moreArr;
+        }
+
+        for (String str : strArr) {
+            System.out.println(str);
+        }
+        
+        scanner.close();
+    }
+
+	public void practice07() { // 문서 복사하기
+		String[] report = {"Introduction", "Research", "Conclusion"};
+		String[] copyReport = new String[report.length];
 		
-		Scanner scanner = new Scanner(System.in);
+		System.out.println("=== 문서 복사하기 ===");
 		
-		System.out.print("배열의 크기를 입력하세요 : ");
-		int size = scanner.nextInt();
-		scanner.nextLine();
-		String[] strArr = new String[size];
-		for(int i = 0; i < strArr.length; i++) {
-			System.out.printf("%d번째 문자열 : ", i+1);
-			strArr[i] = scanner.nextLine();
+		for(int i = 0; i < report.length; i++) {
+			if(i == 0) {
+				copyReport[i] = "Team Feedback";
+				continue;
+			}
+			copyReport[i] = report[i];
 		}
 		
-		do {
-			
-			System.out.print("더 값을 입력하시겠습니까?(y/n) : ");
-			String answer = scanner.next();
-			
-			if(answer.charAt(0) == 'y' && answer.charAt(0) == 'Y') {
-				System.out.print("더 입력하고 싶은 개수 : ");
-				int moreSize = scanner.nextInt();
-				String[] moreArr = new String[size + moreSize];
-				
-				for(int i = 0; i < moreArr.length; i++) {
-					if(i <= size) {
-						moreArr[i] = strArr[i];
-						continue;
-					}
-					System.out.printf("%d번째 문자열 : ", i+1);
-				}
-				
+		System.out.print("원본 보고서: ");
+		for(int i = 0; i < report.length; i++) {
+			System.out.print(report[i]);
+			if(i != report.length-1) {
+				System.out.print(", ");
 			}
-			
-			
-			
-		} while(size < 0);
+		}
+		System.out.println();
 		
+		System.out.print("복사된 보고서: ");
+		for(int i = 0; i < copyReport.length; i++) {
+			System.out.print(copyReport[i]);
+			if(i != copyReport.length-1) {
+				System.out.print(", ");
+			}
+		}
+	}
 
-//		do {
-//			
-//		} while(true);
-
+	public void practice08() { // 오늘의 메뉴판 만들기
+		
+		String[] menu = {"Burger", "Pizza", "Pasta"};
+		String[] add = {"Salad","Soup"};
+		String[] newMenu = new String[menu.length + add.length];
+		
+		 System.out.println("=== 오늘의 메뉴판 만들기 ===");
+		
+		for(int i = 0; i < newMenu.length; i++) {
+			if(i < menu.length) {
+				newMenu[i] = menu[i];
+				continue;
+			}
+			newMenu[i] = add[i-3];
+		}
+		
+		System.out.print("어제 메뉴판: ");
+		for(int i = 0; i < menu.length; i++) {
+			System.out.print(menu[i]);
+			if(i != menu.length-1) {
+				System.out.print(", ");
+			}
+		}
+		System.out.println();
+		System.out.print("오늘 메뉴판: ");
+		for(int i = 0; i < newMenu.length; i++) {
+			System.out.print(newMenu[i]);
+			if(i != newMenu.length-1) {
+				System.out.print(", ");
+			}
+		}
+		
 	}
 }

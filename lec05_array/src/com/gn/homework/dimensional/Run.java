@@ -17,6 +17,8 @@ public class Run {
 			System.out.println("4. 로또 번호 자동 생성기");
 			System.out.println("5. 컴퓨터와 가위바위보");
 			System.out.println("6. 배열 늘리기");
+			System.out.println("7. 문서 복사하기");
+			System.out.println("8. 오늘의 메뉴판 만들기");
 				
 			do {
 				System.out.print("선택: ");
@@ -47,12 +49,20 @@ public class Run {
 						System.out.println();
 						practice.practice06();
 						break;
+					case 7:
+						System.out.println();
+						practice.practice07();
+						break;
+					case 8:
+						System.out.println();
+						practice.practice08();
+						break;
 					default:
 						System.out.println("잘못된 선택입니다. 다시 선택하세요.");
 	                    break;
 				}
 				
-			} while(select < 1 || select > 6);
+			} while(select < 1 || select > 8);
 			
 			scanner.close();
 
