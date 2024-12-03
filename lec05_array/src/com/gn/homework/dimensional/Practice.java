@@ -87,7 +87,35 @@ public class Practice {
 		
 	}
 	
-	public void practice04() { // 컴퓨터와 가위바위보
+	public void practice04() { // 로또 번호 자동 생성기
+	    int[] lotto = new int[6];
+
+	    for(int i = 0; i < lotto.length; i++) {
+	    	int randomNumber;
+	    	boolean isOverlap = false;
+	    	
+	    	do {
+	    		randomNumber = (int)(Math.random() * (45 + 1 - 1)) + 1;
+	    		isOverlap = false;
+	    		
+	    		for(int j = 0; j < i; j++) {
+	    			if(lotto[j] == randomNumber) {
+	    				isOverlap = true;
+	    				break;
+	    			}
+	    		}
+	    		
+	    	} while(isOverlap);
+	    	
+	    	lotto[i] = randomNumber;
+	    }
+
+	    for (int num : lotto) {
+	        System.out.print(num + " ");
+	    }
+	}
+
+	public void practice05() { // 컴퓨터와 가위바위보
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
@@ -137,5 +165,25 @@ public class Practice {
         scanner.close();
 	}
 	
-	
+	public void practice06() { // 배열 늘리기 - 미완
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int size = scanner.nextInt();
+		scanner.nextLine();
+		String[] strArr = new String[size];
+		for(int i = 0; i < strArr.length; i++) {
+			System.out.printf("%d번째 문자열 : ", i+1);
+			strArr[i] = scanner.nextLine();;
+		}
+		
+		for(String s : strArr) {
+			System.out.println(s);
+		}
+//		do {
+//			
+//		} while(true);
+
+	}
 }
