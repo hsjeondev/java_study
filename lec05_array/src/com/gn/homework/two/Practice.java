@@ -162,14 +162,15 @@ public class Practice {
 					isFind = true;
 					break;
 				}
-				if(i == 2 && j == 1) {
-					System.out.println("그런 학생 없습니다.");
-				}
 			}
 			
 			if(isFind) {
 				break;
 			}
+		}
+		
+		if(!isFind) {
+			System.out.println("그런 학생 없습니다.");
 		}
 
 		scanner.close();
