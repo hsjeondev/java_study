@@ -148,17 +148,27 @@ public class Practice {
 		String findName = scanner.next();
 		String[] row = {"첫 번째 줄", "두 번째 줄", "세 번째 줄"};
 		String[] col = {"왼쪽", "오른쪽"};
+		boolean isFind = false;
 		
 		for(int i = 0; i < firstSection.length; i++) {
 			for(int j = 0; j < firstSection[i].length; j++) {
 				if(firstSection[i][j].equals(findName)) {
 					System.out.printf("검색하신 %s 학생은 1분단 %s %s에 있습니다.", findName, row[i], col[i]);
+					isFind = true;
 					break;
 				}
 				if(secondSection[i][j].equals(findName)) {
 					System.out.printf("검색하신 %s 학생은 2분단 %s %s에 있습니다.", findName, row[i], col[i]);
+					isFind = true;
 					break;
 				}
+				if(i == 2 && j == 1) {
+					System.out.println("그런 학생 없습니다.");
+				}
+			}
+			
+			if(isFind) {
+				break;
 			}
 		}
 
