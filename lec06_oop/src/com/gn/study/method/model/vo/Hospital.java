@@ -29,4 +29,5 @@ public class Hospital {
 		System.out.println("저희 병원은 OO시 OO구에 있어요.");
 	}
 	
+	
 }
