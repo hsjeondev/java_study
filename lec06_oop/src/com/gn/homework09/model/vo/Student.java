@@ -6,7 +6,9 @@ public class Student {
 	private String studentName;
 	private String classroomNumber;
 	
-	public Student() {}
+	public Student() {
+		studentNumber++; // static인데 이거 왜 되는지 질문
+	}
 	
 	public int getStudentNumber() {
 		return studentNumber;
@@ -23,6 +25,5 @@ public class Student {
 	public void setClassroomNumber(String classroomNumber) {
 		this.classroomNumber = classroomNumber;
 	}
-	
 	
 }
