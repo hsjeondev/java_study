@@ -16,6 +16,6 @@ public class Person {
 	}
 	
 	public String toString() {
-		return "=== " + name + "===\n" + "나이 : " + age + "\n키 : " + height + "\n몸무게 : " + weight + "\n";
+		return "=== " + name + " ===\n" + "나이 : " + age + "\n키 : " + height + "\n몸무게 : " + weight + "\n";
 	}
 }

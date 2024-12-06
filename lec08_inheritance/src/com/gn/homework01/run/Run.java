@@ -21,7 +21,7 @@ public class Run {
        
         
         Scanner scanner = new Scanner(System.in);
-        Employee[] employees = new Employee[10];
+        Employee[] employees = new Employee[2];
         int employeeIndex = 0;
         String answer = "";
         System.out.println("=== 사원 입력받기 ===");
@@ -52,9 +52,7 @@ public class Run {
                 System.out.print("계속 추가하시겠습니까? (y/n): ");
                 answer = scanner.next();
 
-                if (answer.equalsIgnoreCase("y")) {
-                    break;
-                } else if (answer.equalsIgnoreCase("n")) {
+                if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("n")) {
                     break;
                 } else {
                     System.out.println("잘못된 입력입니다.");
