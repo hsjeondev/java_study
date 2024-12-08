@@ -12,7 +12,7 @@ public class Run {
 
         students[0] = new Student("김철수", 20, 178.2, 70.0, 1, "정보시스템공학과");
         students[1] = new Student("이영희", 23, 167.0, 54.0, 4, "물리학과");
-        students[2] = new Student("홍길동", 21, 197.6, 86, 2, "경영학과");
+        students[2] = new Student("홍길동", 21, 197.6, 86.0, 2, "경영학과");
 
         for (Student student : students) {
             System.out.println(student.toString());
