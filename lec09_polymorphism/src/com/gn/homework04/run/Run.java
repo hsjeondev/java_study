@@ -14,7 +14,16 @@ public class Run {
 		smartPhones[1] = new Iphone15();
 		
 		for(SmartPhone smartPhone : smartPhones) {
-			smartPhone.printMaker();
+			if(smartPhone instanceof GalaxyS24) {
+				System.out.print("갤럭시24는 ");
+				smartPhone.printMaker();
+				System.out.println("에서 만들어 졌다.");
+			}
+			if(smartPhone instanceof Iphone15) {
+				System.out.print("아이폰15는 ");
+				smartPhone.printMaker();
+				System.out.println("에서 만들어 졌다.");
+			}
 			smartPhone.makeCall();
 			smartPhone.takeCall();
 			smartPhone.touch();

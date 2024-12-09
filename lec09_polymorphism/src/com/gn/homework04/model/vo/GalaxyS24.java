@@ -36,7 +36,7 @@ public class GalaxyS24 extends SmartPhone {
 	
 	@Override
 	public void printMaker() {
-		System.out.println("갤럭시S24는 삼성에서 만들어 졌다.");
+		System.out.print("삼성");
 	}
 
 

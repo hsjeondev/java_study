@@ -36,7 +36,7 @@ public class Iphone15 extends SmartPhone {
 	
 	@Override
 	public void printMaker() {
-		System.out.println("아이폰15는 애플에서 만들어 졌다.");
+		System.out.print("애플");
 	}
 
 }
