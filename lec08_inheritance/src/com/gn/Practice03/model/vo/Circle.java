@@ -20,7 +20,7 @@ public class Circle extends Point {
 		this.radius = radius;
 	}
 	
-	public static double getPi() {
+	public static double getPI() {
 		return PI;
 	}
 	
