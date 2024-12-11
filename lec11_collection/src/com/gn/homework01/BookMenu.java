@@ -28,7 +28,7 @@ public class BookMenu {
 				selectMenu = sc.nextInt();
 				System.out.println();
 			} catch (InputMismatchException e) {
-				System.out.println("숫자 1, 2, 3, 4, 5, 9 중 하나를 입력하세요.");
+				System.out.println("숫자를 입력하세요.");
 				System.out.println();
 				sc.nextLine();
 				continue;
