@@ -48,7 +48,7 @@ public class BookController {
 	
 	public int ascBook() {
 		try {
-			Collections.sort(bookList);
+			Collections.sort(bookList); // compareTo()를 직접 반환 받아서 1, -1, 0을 활용 못 하나?
 			return 1;
 		} catch(Exception e) {
 			return -1;

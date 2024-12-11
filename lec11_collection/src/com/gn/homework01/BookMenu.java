@@ -1,5 +1,6 @@
 package com.gn.homework01;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,6 +10,8 @@ public class BookMenu {
 	private BookController bc = new BookController();
 	
 	public void mainMenu() {
+		
+		int selectMenu = 0;
 		
 		while(true) {
 			System.out.println("=== 가남 도서관에 오신걸 환영합니다 ===");
@@ -21,7 +24,15 @@ public class BookMenu {
 			System.out.println("9. 종료");
 			
 			System.out.print("메뉴 선택 : ");
-			int selectMenu = sc.nextInt();
+			try {
+				selectMenu = sc.nextInt();
+				System.out.println();
+			} catch (InputMismatchException e) {
+				System.out.println("숫자 1, 2, 3, 4, 5, 9 중 하나를 입력하세요.");
+				System.out.println();
+				sc.nextLine();
+				continue;
+			}
 			sc.nextLine();
 			
 			switch (selectMenu) {
@@ -57,34 +68,57 @@ public class BookMenu {
 	}
 	
 	public void insertBook() {
-		System.out.println("=== 도서 등록 ===");
-		System.out.print("도서명 : ");
-		String title = sc.nextLine();
-		System.out.print("저자명 : ");
-		String author = sc.nextLine();
-		System.out.print("장르 : ");
-		String category = sc.nextLine();
-		System.out.print("가격 : ");
-		int price = sc.nextInt();
-		sc.nextLine();
 		
-		switch(category) {
-			case "1" :
-				category = "인문";
-				break;
-			case "2" :
-				category = "자연과학";
-				break;
-			case "3" :
-				category = "어린이";
-				break;
-			default :
-				category = "기타";
-				break;
+		while (true) {
+			int intCategory = 0;
+			String category = "";
+		    int price = 0;
+
+		    System.out.println("=== 도서 등록 ===");
+		    System.out.print("도서명 : ");
+		    String title = sc.nextLine();
+		    System.out.print("저자명 : ");
+		    String author = sc.nextLine();
+		    
+		    try {
+		    	System.out.print("장르 : ");
+			    intCategory = sc.nextInt();
+			    sc.nextLine();
+		    } catch (InputMismatchException e) {
+		    	System.out.println("장르는 정수만 입력할 수 있습니다. 도서 등록을 처음부터 다시 시작합니다.");
+		        sc.nextLine();
+		        continue;
+		    }
+
+		    try {
+		        System.out.print("가격 : ");
+		        price = sc.nextInt();
+		        sc.nextLine();
+		    } catch (InputMismatchException e) {
+		        System.out.println("가격은 정수만 입력할 수 있습니다. 도서 등록을 처음부터 다시 시작합니다.");
+		        sc.nextLine();
+		        continue;
+		    }
+
+		    switch (intCategory) {
+		        case 1:
+		            category = "인문";
+		            break;
+		        case 2:
+		            category = "자연과학";
+		            break;
+		        case 3:
+		            category = "어린이";
+		            break;
+		        default:
+		            category = "기타";
+		            break;
+		    }
+
+		    Book book = new Book(title, author, category, price);
+		    bc.insertBook(book);
+		    break;
 		}
-		
-		Book book  = new Book(title, author, category, price);
-		bc.insertBook(book);
 	}
 	
 	public void selectList() {
@@ -103,7 +137,7 @@ public class BookMenu {
 	public void searchBook() {
 		System.out.println("=== 도서 검색 ===");
 		System.out.print("검색어 : ");
-		String seachBook = sc.nextLine();
+		String seachBook = sc.next();
 		List<Book> tempList = bc.searchBook(seachBook);
 		
 		if(tempList.isEmpty()) {
