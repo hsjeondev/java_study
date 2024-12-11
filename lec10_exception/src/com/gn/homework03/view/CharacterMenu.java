@@ -20,8 +20,9 @@ public class CharacterMenu {
 			System.out.println("\'" + userInput + "\'에 포함된 영문자 개수 : " + chCount);
 		} catch(CharCheckException e) {
 			e.printStackTrace();
+		} finally {
+			scanner.close();			
 		}
 		
-		scanner.close();
 	}
 }

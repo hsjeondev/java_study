@@ -23,8 +23,9 @@ public class NumberMenu {
 			System.out.print(check);
 		} catch(NumRangeException e) {
 			e.printStackTrace();
+		} finally {
+			scanner.close();			
 		}
 		
-		scanner.close();
 	}
 }

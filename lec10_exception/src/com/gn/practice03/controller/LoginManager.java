@@ -15,13 +15,16 @@ public class LoginManager {
 	}
 	
 	private boolean isValidCredentials(String id, String pwd) {
+		boolean current = false;
 		String currentId = "admin";
 		String currentPwd = "admin1234!";
 		
 		if(id.equals(currentId) && pwd.equals(currentPwd)) {
-			return true;
+			current = true;
 		} else {
-			return false;
+			current = false;
 		}
+		
+		return current;
 	}
 }

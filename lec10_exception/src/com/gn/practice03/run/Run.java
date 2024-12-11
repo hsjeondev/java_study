@@ -8,6 +8,8 @@ import com.gn.practice03.exception.InvalidCredentialsException;
 public class Run {
 
 	public static void main(String[] args) {
+
+		LoginManager loginManager = new LoginManager();
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -16,15 +18,14 @@ public class Run {
 		System.out.print("비밀번호 : ");
 		String pwd = scanner.next();
 		
-		LoginManager loginManager = new LoginManager();
-		
 		try {
 			loginManager.login(id, pwd);
 		} catch (InvalidCredentialsException e) {
 			System.out.println(e.getMessage());
+		} finally {
+			scanner.close();			
 		}
 		
-		scanner.close();
 	}
 
 }
