@@ -34,7 +34,7 @@ public class LotteryController {
 	public Set<Lottery> winObject() {
 		
 		if(lottery.size() < 4) {
-			return null;
+			return win;
 		}
 		
 		List<Lottery> tempList = new ArrayList<Lottery>();

@@ -150,6 +150,7 @@ public class BookMenu {
 	}
 	
 	public void deleteBook() {
+		
 		System.out.println("=== 도서 삭제 ===");
 		System.out.print("도서명 : ");
 		String deleteTitle = sc.nextLine();

@@ -52,6 +52,7 @@ public class LotteryMenu {
 			}
 			
 		}
+		
 	}
 	
 	public void insertObject() {
@@ -93,55 +94,80 @@ public class LotteryMenu {
 	
 	public void deleteObject() {
 		System.out.println("===== 2. 추첨 대상 삭제 =====");
-		System.out.print("이름 : ");
-		String name = sc.nextLine();
-		System.out.print("핸드폰 번호('-'빼고) : ");
-		String phone = sc.nextLine();
-		if(lc.deleteObject(new Lottery(name, phone))) {
-			System.out.println("삭제 완료되었습니다.");
+		Set<Lottery> chancePeople = lc.searchObject();
+		if(chancePeople.isEmpty()) {
+			System.out.println("추첨 대상이 없습니다.");
 		} else {
-			System.out.println("해당 대상자를 찾을 수 없습니다.");
+			System.out.print("이름 : ");
+			String name = sc.nextLine();
+			System.out.print("핸드폰 번호('-'빼고) : ");
+			String phone = sc.nextLine();
+			if(lc.deleteObject(new Lottery(name, phone))) {
+				System.out.println("삭제 완료되었습니다.");
+			} else {
+				System.out.println("해당 대상자를 찾을 수 없습니다.");
+			}	
 		}
+		System.out.println();
 	}
 	
 	public void searchObject() {
-		System.out.println("===== 3. 추첨 대상 목록 조회 =====");
 		Set<Lottery> chancePeople = lc.searchObject();
-		System.out.println(chancePeople);
+		System.out.println("===== 3. 추첨 대상 목록 조회 =====");
+		if(chancePeople.isEmpty()) {
+			System.out.println("추첨 대상이 없습니다. 추첨 대상을 추가해주세요.");
+			
+		} else {
+			System.out.println(chancePeople);
+		}
+		System.out.println();
 	}
 	
 	public void winObject() {
 		System.out.println("===== 4. 당첨 대상 구성 =====");
 		Set<Lottery> winners = lc.winObject();
 		
-		if(winners == null) {
+		if(winners.isEmpty()) {
 			System.out.println("추첨 대상이 4명이상이어야 당첨 대상을 구성할 수 있습니다.");
+			System.out.println("현재 "+ winners.size() + "명 입니다.");
 		} else {
 			System.out.println(winners);
 		}
+		System.out.println();
 	}
 	
 	public void sortedWinObject() {
 		System.out.println("===== 5. 정렬된 당첨 대상 확인 =====");
 		Set<Lottery> sortWinner = lc.sortedWinObject();
-		Iterator<Lottery> iterator = sortWinner.iterator();
-		while(iterator.hasNext()) {
-			Lottery lottery = iterator.next();
-			System.out.println(lottery);
+		if(sortWinner.isEmpty()) {
+			System.out.println("당첨 대상이 구성 되지 않았습니다. 당첨 대상을 먼저 구성해주세요.");
+		} else {
+			Iterator<Lottery> iterator = sortWinner.iterator();
+			while(iterator.hasNext()) {
+				Lottery lottery = iterator.next();
+				System.out.println(lottery);
+			}			
 		}
+		System.out.println();
 	}
 	
 	public void searchWinner() {
 		System.out.println("===== 6. 당첨 대상 검색 =====");
-		System.out.println("검색할 대상의 이름과 핸드폰 번호를 입력하세요.");
-		System.out.print("이름 : ");
-		String name = sc.next();
-		System.out.print("핸드폰 번호('-'빼고) : ");
-		String phone = sc.next();
-		if(lc.searchWinnder(new Lottery(name, phone))) {
-			System.out.println("축하합니다. 당첨 목록에 존재합니다.");
+		Set<Lottery> sortWinner = lc.sortedWinObject();
+		if(sortWinner.isEmpty()) {
+			System.out.println("당첨 대상이 구성 되지 않았습니다. 당첨 대상을 먼저 구성해주세요.");
 		} else {
-			System.out.println("아쉽게도 당첨 목록에 없습니다. 다음 기회를 노려보세요.");
+			System.out.println("검색할 대상의 이름과 핸드폰 번호를 입력하세요.");
+			System.out.print("이름 : ");
+			String name = sc.next();
+			System.out.print("핸드폰 번호('-'빼고) : ");
+			String phone = sc.next();
+			if(lc.searchWinnder(new Lottery(name, phone))) {
+				System.out.println("축하합니다. 당첨 목록에 존재합니다.");
+			} else {
+				System.out.println("아쉽게도 당첨 목록에 없습니다. 다음 기회를 노려보세요.");
+			}
 		}
+		System.out.println();
 	}
 }
