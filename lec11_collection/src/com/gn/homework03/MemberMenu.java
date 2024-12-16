@@ -128,7 +128,6 @@ public class MemberMenu {
 			}
 		}
 		
-		// 회원 메뉴 넣어야 함.
 		memberMenu();
 		
 	}
