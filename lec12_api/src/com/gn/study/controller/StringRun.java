@@ -93,6 +93,29 @@ public class StringRun {
 		String file_name = file.substring(0, file.lastIndexOf("."));
 		System.out.println(file_name + "." + ex);
 		
+		// valueOf
+		double pi = 3.14;
+		String piStr = String.valueOf(pi);
+		System.out.println(piStr + 2.1);
+		System.out.println();
+		
+		// StringBuilder
+		StringBuilder sb = new StringBuilder("Hello");
+		sb.append("world!!");
+		System.out.println(sb);
+		
+		sb.insert(5, " Java ");
+		System.out.println(sb);
+		
+		sb.delete(11, 16+1);
+		System.out.println(sb);
+		
+		int idx = sb.indexOf("!");
+		sb.deleteCharAt(idx);
+		System.out.println(sb);
+		
+		sb.reverse();
+		System.out.println(sb);
 		
 	}
 
