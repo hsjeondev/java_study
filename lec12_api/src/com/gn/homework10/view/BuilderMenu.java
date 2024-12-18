@@ -10,14 +10,15 @@ public class BuilderMenu {
 	private BuilderController bc = new BuilderController();
 	
 	public void mainMenu() {
+		int select = 0;
 		
-		while(true) {
+		while(select != 9) {
 			System.out.println("==============================");
 			System.out.println("1. 지정 문자열 사용");
 			System.out.println("2. 입력 문자열 사용");
 			System.out.println("9. 프로그램 끝내기");
 			System.out.print("메뉴 번호 : ");
-			int select = sc.nextInt();
+			select = sc.nextInt();
 			
 			switch(select) {
 			case 1:
@@ -31,10 +32,6 @@ public class BuilderMenu {
 				break;
 			default:
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-			}
-			
-			if(select == 9) {
-				break;
 			}
 		}
 	}
