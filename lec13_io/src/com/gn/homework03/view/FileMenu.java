@@ -117,7 +117,7 @@ public class FileMenu {
 			
 			fc.fileEdit(fileName, sb);
 		} else {
-			System.out.println("업는 파일입니다.");
+			System.out.println("없는 파일입니다.");
 		}
 	}
 }
